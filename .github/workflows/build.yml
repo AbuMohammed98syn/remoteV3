@@ -10,17 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-      
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
 
-      - name: Rebuild native modules
-        run: npm rebuild
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.12.0
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
 
       - name: Install EAS CLI
         run: npm install -g eas-cli
