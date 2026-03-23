@@ -93,5 +93,8 @@
     "typescript": "^5.9.3",
     "vitest": "^4.1.0"
   },
+  "optionalDependencies": {
+    "lightningcss-linux-x64-gnu": "*"
+  },
   "packageManager": "pnpm@9.12.0"
 }
