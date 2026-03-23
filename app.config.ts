@@ -31,16 +31,17 @@ const env = {
 
 const config: ExpoConfig = {
   name: env.appName,
-  slug: env.appSlug,
+  slug: "remotedesktopv1",
   version: "1.0.0",
   orientation: "portrait",
   icon: "./assets/images/icon.png",
+  owner: "kinkaliis-organization",
   scheme: env.scheme,
 
-  // ✅ الإضافة المهمة لـ EAS
+
   extra: {
     eas: {
-      projectId: "3edacc78-bdee-4eb0-9f76-4318b69ae3a3"
+      projectId: "7aa84d5f-8522-4adc-a184-e51e61bbbe1e"
     }
   },
 
