@@ -23,9 +23,3 @@ jobs:
         run: |
           npx eas-cli login --non-interactive --token ${{ secrets.EAS_TOKEN }}
           npx eas build -p android --profile preview --non-interactive
-      
-      - name: Upload APK
-        uses: actions/upload-artifact@v3
-        with:
-          name: app-apk
-          path: '*.apk'
