@@ -22,7 +22,17 @@ jobs:
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
+      - name: Check EXPO_TOKEN
+        run: |
+          if [ -z "$EXPO_TOKEN" ]; then
+            echo "EXPO_TOKEN is EMPTY"
+          else
+            echo "EXPO_TOKEN is SET (length: ${#EXPO_TOKEN})"
+          fi
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
       - name: Build APK
         run: eas build -p android --profile preview --non-interactive
         env:
-          EAS_TOKEN: ${{ secrets.EAS_TOKEN }}
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
